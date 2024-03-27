@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentification</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center mt-5 align-items-center">
+
+
+            <div class="card col-4">
+                <form th:action="@{/login}" method="post">
+                <div class="card-header text-center">
+                    <h3 class="display-5">Login Form</h3>
+                </div>
+                <div class="card-body">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control form-control-sm" name="username" id="username"/>
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control form-control-sm" name="password" id="password"/>
+                    <div class="form-group form-check pt-2">
+                        <input type="checkbox" class="form-check-input" name="remember-me" id="remember-me">
+                        <label class="form-check-label" for="remember-me">Gardez moi connecter</label>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-block" type="submit" id="login">Login</button>
+                </div>
+                </form>
+            </div>
+
+
+
+    </div>
+</div>
+
+
+</body>
+</html>

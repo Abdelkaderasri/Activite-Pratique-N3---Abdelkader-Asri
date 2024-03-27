@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un patient</title>
+    <!-- Ajouter les liens vers les fichiers CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div layout:fragment="content" class="container mt-5">
+    <h2 class="mt-5">Ajouter un patient</h2>
+    <form method="post" th:action="@{save(keyword=${keyword},page=${currentPage})}"  class="mt-3">
+        <div class="form-group">
+            <label for="nom">id :</label>
+            <input type="text" class="form-control" id="id" th:field="${patient.id}">
+        </div>
+        <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input type="text" class="form-control" id="nom" th:field="${patient.nom}">
+            <span class="text-danger" th:errors="${patient.nom}"></span>
+        </div>
+        <div class="form-group">
+            <label for="dateNaissance">Date de naissance :</label>
+            <input type="date" class="form-control" id="dateNaissance" th:field="${patient.dateNaissance}">
+            <span class="text-danger" th:errors="${patient.dateNaissance}"></span>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="malade" th:field="${patient.malade}">
+            <label class="form-check-label" for="malade">Malade</label>
+            <span class="text-danger" th:errors="${patient.malade}"></span>
+        </div>
+        <div class="form-group">
+            <label for="score">Score :</label>
+            <input type="number" class="form-control" id="score" th:field="${patient.score}">
+            <span class="text-danger" th:errors="${patient.score}"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Modifier</button>
+    </form>
+</div>
+
+<!-- Ajouter les liens vers les fichiers JavaScript de Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
